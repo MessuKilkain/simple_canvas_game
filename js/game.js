@@ -71,6 +71,20 @@ var update = function (modifier) {
 	if (39 in keysDown) { // Player holding right
 		hero.x += hero.speed * modifier;
 	}
+	
+	// Restrict hero position
+	if ( 32 > hero.x ) {
+		hero.x = 32;
+	}
+	if ( canvas.width - 32 < hero.x ) {
+		hero.x = canvas.width - 32;
+	}
+	if ( 32 > hero.y ) {
+		hero.y = 32;
+	}
+	if ( canvas.height - 32 < hero.y ) {
+		hero.y = canvas.height - 32;
+	}
 
 	// Are they touching?
 	if (
