@@ -34,6 +34,7 @@ var hero = {
 	speed: 256 // movement in pixels per second
 };
 var monster = {};
+var monster2 = {};
 var monstersCaught = 0;
 
 // Handle keyboard controls
@@ -55,6 +56,9 @@ var reset = function () {
 	// Throw the monster somewhere on the screen randomly
 	monster.x = 32 + (Math.random() * (canvas.width - 64));
 	monster.y = 32 + (Math.random() * (canvas.height - 64));
+	
+	monster2.x = 32 + (Math.random() * (canvas.width - 64));
+	monster2.y = 32 + (Math.random() * (canvas.height - 64));
 };
 
 // Update game objects
@@ -110,6 +114,7 @@ var render = function () {
 
 	if (monsterReady) {
 		ctx.drawImage(monsterImage, monster.x, monster.y);
+		ctx.drawImage(monsterImage, monster2.x, monster2.y);
 	}
 
 	// Score
